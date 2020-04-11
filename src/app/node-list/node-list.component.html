@@ -1,0 +1,13 @@
+<input  class="form-control" 
+type="text"
+ [(ngModel)]="note"
+ (keyup.enter)=addnote()>
+ <h2>Lists</h2>
+ <ul class="list-group" *ngIf="notes.length>0">
+  <app-node-list-item  
+  *ngFor="let note of notes"
+  [note]="note" 
+  (delete)="deletenode(note)">
+  </app-node-list-item>
+ </ul>
+ <h6 *ngIf="notes.length<=0"> noo notes</h6>
